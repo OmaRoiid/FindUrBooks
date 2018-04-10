@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  tools:context="com.example.omar_salem.kotlinoverview.ui.MainActivity">
+
+  <EditText
+    android:id="@+id/et_SearchKey_id"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:layout_margin="8dp"
+    android:hint="@string/search_about"
+    android:background="@drawable/rounded_edittext"
+
+    />
+<View
+  android:id="@+id/v_block"
+  android:layout_width="match_parent"
+  android:background="#91000000"
+  android:layout_height="2dp"
+  app:layout_constraintTop_toBottomOf="@+id/et_SearchKey_id"
+  app:layout_constraintStart_toStartOf="parent"
+  app:layout_constraintEnd_toEndOf="parent"
+  android:layout_margin="8dp"/>
+  <android.support.v7.widget.RecyclerView
+    android:id="@+id/rv_Books"
+    android:layout_width="match_parent"
+    android:layout_height="417dp"
+    android:layout_margin="8dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/v_block"
+    tools:listitem="@layout/card_view_book"
+
+
+    />
+
+</android.support.constraint.ConstraintLayout>

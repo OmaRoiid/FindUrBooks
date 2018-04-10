@@ -1,0 +1,7 @@
+<resources>
+  <string name="app_name">KotlinOverview</string>
+  <string name="search_about">Search About</string>
+  <string name="book_tittle">Book Tittle</string>
+  <string name="book_publisher">Book publisher</string>
+  <string name="publishedDate">publishedDate</string>
+</resources>
