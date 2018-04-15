@@ -21,14 +21,14 @@ import java.util.ArrayList
 class BookAdapter(private val bookDetailList:ArrayList<AllBooks> ,private val mContext:Context): RecyclerView.Adapter<BookAdapter.MyViewHolder>() {
 
     override fun onBindViewHolder(holder: BookAdapter.MyViewHolder?, position: Int) {
-        holder?.Tittle?.text= bookDetailList[position]!!.items!!.BookTittle
-        holder?.Publisher?.text= bookDetailList[position]!!.items!!.BookPublisher
-        holder?.publishedDate?.text= bookDetailList[position]!!.items!!.publishedDate
-
+        with(bookDetailList[position]) {
+            holder?.Tittle?.text = items!!.BookTittle
+            holder?.Publisher?.text = items.BookPublisher
+            holder?.publishedDate?.text = items.publishedDate
             Glide.with(mContext)
-                .load(bookDetailList[position]!!.items!!.BookImage?.NormalImage)
-                .into(holder?.Image!!)
-
+                    .load(items.BookImage?.NormalImage)
+                    .into(holder?.Image!!)
+        }
 
     }
 
@@ -50,10 +50,12 @@ class BookAdapter(private val bookDetailList:ArrayList<AllBooks> ,private val mC
         var Publisher: TextView?= null
         var publishedDate: TextView?= null
         init {
-            Image=itemView?.findViewById(R.id.iv_book)as ImageView
-            Tittle=itemView.findViewById(R.id.tv_book_tittle)as TextView
-            Publisher=itemView.findViewById(R.id.tv_book_publisher)as TextView
-            publishedDate=itemView.findViewById(R.id.tv_publishedDate)as TextView
+            with(itemView) {
+                Image = this?.findViewById(R.id.iv_book) as ImageView
+                Tittle = this.findViewById(R.id.tv_book_tittle) as TextView
+                Publisher = this.findViewById(R.id.tv_book_publisher) as TextView
+                publishedDate = this.findViewById(R.id.tv_publishedDate) as TextView
+            }
         }
 
 

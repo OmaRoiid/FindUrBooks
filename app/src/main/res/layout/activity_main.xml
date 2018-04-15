@@ -27,6 +27,7 @@
   app:layout_constraintTop_toBottomOf="@+id/et_SearchKey_id"
   app:layout_constraintStart_toStartOf="parent"
   app:layout_constraintEnd_toEndOf="parent"
+  app:layout_constraintBottom_toTopOf="@+id/rv_Books"
   android:layout_margin="8dp"/>
   <android.support.v7.widget.RecyclerView
     android:id="@+id/rv_Books"
