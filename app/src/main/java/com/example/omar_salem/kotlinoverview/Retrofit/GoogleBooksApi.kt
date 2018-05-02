@@ -1,6 +1,6 @@
 package com.example.omar_salem.kotlinoverview.Retrofit
 
-import com.example.omar_salem.kotlinoverview.model.BooksResponse
+import com.example.omar_salem.kotlinoverview.model.Response
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -10,6 +10,5 @@ import retrofit2.http.Query
  */
 interface GoogleBooksApi {
     @GET("volumes")
-    fun getBooks( @Query("q")Key:String ) :Call<BooksResponse>
-    //TODO make Debugaing  for app and  check it  work or  not
+    fun getBooks( @Query("q")Key:String ) :Call<Response.BooksResponse>
 }
